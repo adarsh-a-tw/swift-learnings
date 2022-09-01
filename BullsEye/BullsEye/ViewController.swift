@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     override var shouldAutorotate: Bool {return true}
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {return UIInterfaceOrientationMask.landscapeRight}
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {return UIInterfaceOrientationMask.landscape}
     
     override func viewDidLoad() {
         super.viewDidLoad()
