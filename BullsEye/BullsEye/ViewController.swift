@@ -18,6 +18,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var roundLabel:UILabel!
     @IBOutlet weak var scoreLabel:UILabel!
 
+    
+    override var shouldAutorotate: Bool {return true}
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {return UIInterfaceOrientationMask.landscapeRight}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         startNewGame()
