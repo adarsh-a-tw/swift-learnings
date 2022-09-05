@@ -9,9 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var targetValue:Int = 0
-    var score = 0
-    var round = 0
+    var gameController:GameController!
     
     @IBOutlet weak var slider:UISlider!
     @IBOutlet weak var targetLabel:UILabel!
@@ -25,6 +23,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        gameController = BullsEyeGame()
         startNewGame()
         
         let sliderThumbImage = UIImage(named: "SliderThumb-Normal")!
@@ -38,36 +37,17 @@ class ViewController: UIViewController {
         
         slider.setMinimumTrackImage(minimumTrackImage, for: .normal)
         slider.setMaximumTrackImage(maximumTrackImage, for: .normal)
+        slider.value = 50
     }
     
     
 
     @IBAction func showAlert(){
-        let currentValue = Int(self.slider.value.rounded())
-        let difference = (targetValue - currentValue).magnitude
+        let guessValue = Int(slider.value.rounded())
+       
+        let result = gameController.checkAndUpdateScore(guess: guessValue)
         
-        let message:String
-        let title:String
-        
-        switch(difference){
-        case 0:
-            score += 200
-            message = "200 points"
-            title = "Bull's Eye!"
-        case 1...5:
-            score += 100
-            message = "100 points"
-            title = "Almost there!"
-        case 6...10:
-            score += 50
-            message = "50 points"
-            title = "You are close!"
-        default:
-            message = "Try again"
-            title = "Too far!"
-        }
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: result.title, message: result.message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler:{(action:UIAlertAction)->Void in self.startNewRound()})
         alert.addAction(action)
         
@@ -75,30 +55,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startNewGame(){
-        round = 0
-        score = 0
-        startNewRound()
+        gameController.startNewGame()
+        updateLabels()
     }
     
-    private func assignTarget(){
-        targetValue = Int.random(in: 1...100)
-        targetLabel.text = String(self.targetValue)
+    
+    private func updateLabels(){
+        targetLabel.text = String(gameController.targetValue)
+        roundLabel.text = String(gameController.round)
+        scoreLabel.text = String(gameController.score)
     }
     
-    private func assignRound(){
-        round += 1
-        roundLabel.text = String(round)
-    }
-    
-    private func updateScore(){
-        scoreLabel.text = String(score)
-    }
-    
-    private func startNewRound(){
-        assignTarget()
-        assignRound()
-        updateScore()
+    func startNewRound(){
+        gameController.startNewRound()
         slider.value = 50
+        updateLabels()
     }
 
 }

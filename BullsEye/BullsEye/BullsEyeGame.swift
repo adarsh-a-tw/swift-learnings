@@ -8,7 +8,7 @@
 import Foundation
 
 
-class BullsEyeGame{
+class BullsEyeGame: GameController{
     var score:Int = 0
     var round:Int = 0
     var targetValue:Int = 50
