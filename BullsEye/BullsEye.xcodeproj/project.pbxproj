@@ -44,8 +44,6 @@
 /* Begin PBXFileReference section */
 		C78642F928C5D2E900345F94 /* MockBullsEyeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBullsEyeGame.swift; sourceTree = "<group>"; };
 		C78642FB28C5D30800345F94 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
-		C786430528C6043400345F94 /* BullsEyeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeUITests.swift; sourceTree = "<group>"; };
-		C786430728C6043400345F94 /* BullsEyeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C7A64E4228BF88A90066CDB1 /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A64E4528BF88A90066CDB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7A64E4728BF88A90066CDB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,22 +89,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C786430428C6043400345F94 /* BullsEyeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C786430528C6043400345F94 /* BullsEyeUITests.swift */,
-				C786430728C6043400345F94 /* BullsEyeUITestsLaunchTests.swift */,
-			);
-			path = BullsEyeUITests;
-			sourceTree = "<group>";
-		};
 		C7A64E3928BF88A90066CDB1 = {
 			isa = PBXGroup;
 			children = (
 				C7A64E4428BF88A90066CDB1 /* BullsEye */,
 				C7B8E59928C5AFA70089BE7C /* BullsEyeGameTests */,
 				C7B8E5A628C5B8F60089BE7C /* BullsEyeTests */,
-				C786430428C6043400345F94 /* BullsEyeUITests */,
 				C7A64E4328BF88A90066CDB1 /* Products */,
 				C7B8E48528C121010089BE7C /* Frameworks */,
 			);
