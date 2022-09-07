@@ -27,8 +27,7 @@ class MockBullsEyeGame:GameController{
     
     func checkAndUpdateScore(guess: Int) -> (title: String, message: String) {
         checkAndUpdateScoreMethodCalls.append([guess])
-        score += 100
-        round = 2
+        
         if let returnValue = checkAndUpdateScoreMethodSideEffect{
             return returnValue
         }

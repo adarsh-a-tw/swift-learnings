@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol GameController{
+protocol Game {
     
     var score:Int{get set}
     var round:Int{get set}
